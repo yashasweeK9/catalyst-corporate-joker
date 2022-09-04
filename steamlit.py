@@ -3,7 +3,7 @@ import pandas as pd
 import csv
 import random
 ph = "Type your Question here!"
-with open(r'C:/Users/Ajeet/Downloads/JokeGeneratorSeq2Seq-master/JokeGeneratorSeq2Seq-master/data/jokes.csv', newline='') as f:
+with open(r'./data/jokes.csv', newline='') as f:
     reader = csv.reader(f)
     jok = list(reader)
 
