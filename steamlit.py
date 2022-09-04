@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import csv
 import random
+import re
 ph = "Type your Question here!"
 with open(r'./data/jokes.csv', newline='') as f:
     reader = csv.reader(f)
@@ -36,9 +37,11 @@ def getAnswerById(id):
     return jok[id+1][1]
 
 def findJoke(text):
+    text = re.sub('\W+','',text)
     text = text.lower().strip()
     index = -1
     for row in jok:
+        row[0] = re.sub('\W+','',row[0])
         if text == row[0].strip():
             return index
         index=index+1
