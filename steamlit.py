@@ -37,11 +37,9 @@ def getAnswerById(id):
     return jok[id+1][1]
 
 def findJoke(text):
-    text = re.sub('\W+','',text)
     text = text.lower().strip()
     index = -1
     for row in jok:
-        row[0] = re.sub('\W+','',row[0])
         if text == row[0].strip():
             return index
         index=index+1
